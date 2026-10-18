@@ -1,0 +1,1438 @@
+<!-- Desktop Nav Menu -->
+            <div class="hidden lg:flex items-center space-x-1 font-medium text-sm">
+                <button onclick="navigateTo('home')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">হোম (Home)</button>
+                <button onclick="navigateTo('about')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">আমাদের কথা</button>
+                <button onclick="navigateTo('courses')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">কোর্সসমূহ</button>
+                <button onclick="navigateTo('gallery')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">গ্যালারি</button>
+                <button onclick="navigateTo('admission')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">অনলাইন অ্যাডমিশন</button>
+                <button onclick="navigateTo('idcard')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">আইডি কার্ড</button>
+                <button onclick="navigateTo('soulmate')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition text-gold-300"><i class="fa-solid fa-heart mr-1 text-red-400"></i> পাত্র/পাত্রী খুঁজুন</button>
+                <button onclick="navigateTo('contact')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">যোগাযোগ</button>
+                <button onclick="openAdminAccess()" class="bg-gold-500 hover:bg-gold-400 text-maroon-950 font-bold px-3 py-2 rounded-lg transition shadow-md border border-gold-300 flex items-center gap-1">
+                    <i class="fa-solid fa-user-shield"></i> অ্যাডমিন প্যানেল
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="lg:hidden text-gold-400 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-maroon-950 border-b border-gold-500/40 px-4 py-4 space-y-2 text-sm">
+            <button onclick="navigateTo('home')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">হোম (Home)</button>
+            <button onclick="navigateTo('about')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">আমাদের কথা (About Us)</button>
+            <button onclick="navigateTo('courses')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">কোর্সসমূহ (Services & Courses)</button>
+            <button onclick="navigateTo('gallery')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">গ্যালারি (Gallery)</button>
+            <button onclick="navigateTo('admission')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">অনলাইন অ্যাডমিশন (Admission)</button>
+            <button onclick="navigateTo('idcard')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">আইডি কার্ড জেনারেটর (ID Card)</button>
+            <button onclick="navigateTo('soulmate')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200 text-gold-400"><i class="fa-solid fa-heart mr-1 text-red-400"></i> পাত্র/পাত্রী খুঁজুন (Matrimonial)</button>
+            <button onclick="navigateTo('contact')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">যোগাযোগ (Contact)</button>
+            <button onclick="openAdminAccess()" class="block w-full text-left py-2 px-3 bg-gold-500 text-maroon-950 font-bold rounded">
+                <i class="fa-solid fa-user-shield mr-1"></i> অ্যাডমিন প্যানেল (Admin Panel)
+            </button>
+        </div>
+    </nav>
+
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiksha Doot Foundation - শিক্ষা দূত ফাউন্ডেশন</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Hind Siliguri & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            50: '#fdf2f2',
+                            100: '#fde8e8',
+                            800: '#600000',
+                            900: '#500000',
+                            950: '#350000',
+                        },
+                        gold: {
+                            200: '#fbe8a6',
+                            300: '#f7d070',
+                            400: '#f3bc44',
+                            500: '#d4af37',
+                            600: '#aa820a',
+                            700: '#856404'
+                        },
+                        cream: '#FFFDF9'
+                    },
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            background-color: #FFFDF9;
+            color: #222222;
+        }
+
+        /* Premium Goldenistic Gradients & Metallics */
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #FFF1B0 0%, #F1C40F 25%, #D4AF37 50%, #B8860B 75%, #FFF1B0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .gold-border {
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #FFD700, #D4AF37, #B8860B) 1;
+        }
+
+        .gold-button {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #B8860B 100%);
+            color: #350000;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .gold-button:hover {
+            background: linear-gradient(135deg, #FFD700 0%, #FFF1B0 50%, #D4AF37 100%);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .maroon-card {
+            background: linear-gradient(145deg, #600000, #350000);
+            border: 1px solid #D4AF37;
+        }
+
+        .gold-box-shadow {
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+        }
+
+        /* Printable ID Card Styling */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-id-card-wrap, #printable-id-card-wrap * {
+                visibility: visible;
+            }
+            #printable-id-card-wrap {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- TOP HEADER / CONTACT INFO -->
+    <header class="bg-maroon-950 text-gold-300 text-xs sm:text-sm py-2 px-4 border-b border-gold-500/30">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-gold-400"></i> +91 9038401071 / +91 8777085354</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-envelope text-gold-400"></i> sssolutions198@gmail.com</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-gold-400"></i> বারাসাত, উত্তর ২৪ পরগণা</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+                <span class="bg-gold-500/20 text-gold-300 px-2.5 py-1 rounded-full border border-gold-500/40 font-medium">Govt. Reg. Educational Consultancy</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="bg-maroon-900 text-white sticky top-0 z-40 shadow-xl border-b border-gold-500/50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Brand Logo / Name -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-gold-200 border-2 border-gold-300 flex items-center justify-center text-maroon-950 font-black text-xl shadow-md">
+                    SD
+                </div>
+                <div>
+                    <h1 class="text-base sm:text-xl font-extrabold gold-text-gradient tracking-wide leading-tight">SHIKSHA DOOT FOUNDATION</h1>
+                    <p class="text-[10px] sm:text-xs text-gold-300 font-medium tracking-normal">শিক্ষা দূত ফাউন্ডেশন • শিক্ষা ও ক্যারিয়ার গাইডেন্স</p>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Menu -->
+            <div class="hidden lg:flex items-center space-x-1 font-medium text-sm">
+                <button onclick="navigateTo('home')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">হোম (Home)</button>
+                <button onclick="navigateTo('about')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">আমাদের কথা</button>
+                <button onclick="navigateTo('courses')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">কোর্সসমূহ</button>
+                <button onclick="navigateTo('team')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition text-gold-300"><i class="fa-solid fa-users mr-1"></i> আমাদের টিম</button>
+                <button onclick="navigateTo('gallery')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">গ্যালারি</button>
+                <button onclick="navigateTo('admission')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">অনলাইন অ্যাডমিশন</button>
+                <button onclick="navigateTo('idcard')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">আইডি কার্ড</button>
+                <button onclick="navigateTo('contact')" class="nav-btn px-3 py-2 rounded-lg hover:bg-maroon-800 hover:text-gold-400 transition">যোগাযোগ</button>
+                <button onclick="openAdminAccess()" class="bg-gold-500 hover:bg-gold-400 text-maroon-950 font-bold px-3 py-2 rounded-lg transition shadow-md border border-gold-300 flex items-center gap-1">
+                    <i class="fa-solid fa-user-shield"></i> অ্যাডমিন প্যানেল
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="lg:hidden text-gold-400 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-maroon-950 border-b border-gold-500/40 px-4 py-4 space-y-2 text-sm">
+            <button onclick="navigateTo('home')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">হোম (Home)</button>
+            <button onclick="navigateTo('about')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">আমাদের কথা (About Us)</button>
+            <button onclick="navigateTo('courses')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">কোর্সসমূহ (Services & Courses)</button>
+            <button onclick="navigateTo('team')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-300 font-bold"><i class="fa-solid fa-users mr-1"></i> আমাদের টিম (Our Team)</button>
+            <button onclick="navigateTo('gallery')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">গ্যালারি (Gallery)</button>
+            <button onclick="navigateTo('admission')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">অনলাইন অ্যাডমিশন (Admission)</button>
+            <button onclick="navigateTo('idcard')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">আইডি কার্ড জেনারেটর (ID Card)</button>
+            <button onclick="navigateTo('contact')" class="block w-full text-left py-2 px-3 hover:bg-maroon-800 rounded text-gold-200">যোগাযোগ (Contact)</button>
+            <button onclick="openAdminAccess()" class="block w-full text-left py-2 px-3 bg-gold-500 text-maroon-950 font-bold rounded">
+                <i class="fa-solid fa-user-shield mr-1"></i> অ্যাডমিন প্যানেল (Admin Panel)
+            </button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT BODY -->
+    <main class="flex-grow">
+        <!-- ================= PAGE 1: HOME ================= -->
+        <section id="page-home" class="page-content">
+            <!-- Hero Banner -->
+            <div class="relative bg-gradient-to-br from-maroon-950 via-maroon-900 to-maroon-950 text-white py-16 px-4 border-b-4 border-gold-500 overflow-hidden">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
+                    <div class="max-w-2xl text-center md:text-left space-y-5">
+                        <span class="inline-block bg-gold-500/20 text-gold-300 font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full border border-gold-400">
+                            <i class="fa-solid fa-graduation-cap mr-1"></i> শিক্ষা নিয়ে চিন্তা? আমরা আছি আপনার পাশে!
+                        </span>
+                        <h1 class="text-3xl sm:text-5xl font-black leading-tight">
+                            আপনার শিক্ষাজীবনকে নতুন রূপ দিন <span class="gold-text-gradient">শিক্ষা দূত ফাউন্ডেশন</span>-এর সাথে
+                        </h1>
+                        <p class="text-gray-200 text-sm sm:text-base leading-relaxed">
+                            মাধ্যমিক, উচ্চমাধ্যমিক, গ্র্যাজুয়েশন, নার্সিং (ANM/GNM) এবং ফার্মেসি কোর্সে সরাসরি ও নির্ভরযোগ্য গাইডেন্স পেতে আজই আমাদের সাথে যোগাযোগ করুন।
+                        </p>
+                        <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+                            <button onclick="navigateTo('admission')" class="gold-button px-6 py-3 rounded-xl font-bold text-sm shadow-lg flex items-center gap-2">
+                                <i class="fa-solid fa-pen-to-square"></i> সরাসরি ভর্তি আবেদন করুন
+                            </button>
+                            <button onclick="navigateTo('courses')" class="bg-maroon-800 hover:bg-maroon-700 text-gold-200 border border-gold-400/50 px-6 py-3 rounded-xl font-bold text-sm transition">
+                                <i class="fa-solid fa-book-open mr-1"></i> কোর্সসমূহের তালিকা
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hero Card Highlight -->
+                    <div class="w-full md:w-96 maroon-card p-6 rounded-2xl shadow-2xl space-y-4">
+                        <h3 class="text-lg font-bold text-gold-300 border-b border-gold-500/40 pb-2 text-center">
+                            <i class="fa-solid fa-star text-gold-400 mr-1"></i> কেন শিক্ষা দূত বেছে নেবেন?
+                        </h3>
+                        <ul class="space-y-3 text-xs sm:text-sm text-gray-200">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> ১০০০+ সফল শিক্ষার্থীদের ভর্তি সহায়তা</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> সরকারি অনুমোদিত বোর্ড ও বিশ্ববিদ্যালয়</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> স্পেশাল গাইডেন্স ও অনলাইন সার্ভিস</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400"></i> সরাসরি অভিজ্ঞ কনসালটেন্টদের সাথে কথা বলুন</li>
+                        </ul>
+                        <a href="https://wa.me/919038401071" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-lg text-xs transition shadow">
+                            <i class="fa-brands fa-whatsapp text-base mr-1"></i> হোয়াটসঅ্যাপে পরামর্শ নিন
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Courses Quick View -->
+            <div class="max-w-7xl mx-auto px-4 py-12">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-maroon-800 font-bold text-xs uppercase tracking-wider">Top Educational Programs</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1">আমাদের প্রধান কোর্স ও পরিষেবা</h2>
+                    <div class="w-20 h-1 bg-gold-500 mx-auto mt-2 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-gold-400/40 shadow-lg hover:shadow-xl transition group">
+                        <div class="bg-maroon-900 text-white p-6 relative">
+                            <span class="absolute top-4 right-4 bg-gold-400 text-maroon-950 font-bold text-xs px-2.5 py-1 rounded-full">BOSSE / RMV</span>
+                            <i class="fa-solid fa-graduation-cap text-4xl text-gold-400 mb-2"></i>
+                            <h3 class="text-xl font-bold">মাধ্যমিক ও উচ্চমাধ্যমিক</h3>
+                            <p class="text-xs text-gold-200">Madhyamik & Higher Secondary (10th & 12th)</p>
+                        </div>
+                        <div class="p-6 space-y-3 text-sm text-gray-700">
+                            <p>যাঁরা পড়াশোনায় বিরতি নিয়েছেন বা পুনরায় পাশ করতে চান, তাঁদের জন্য সরাসরি BOSSE বা রবীন্দ্র মুক্ত বিদ্যালয় থেকে পাশের সহজ সুযোগ।</p>
+                            <div class="pt-2 flex justify-between items-center text-xs font-semibold text-maroon-900 border-t">
+                                <span><i class="fa-solid fa-clock text-gold-600"></i> সময়কাল: ৬ - ৮ মাস</span>
+                                <span><i class="fa-solid fa-certificate text-gold-600"></i> গভর্নমেন্ট বোর্ড</span>
+                            </div>
+                            <button onclick="navigateTo('admission')" class="w-full mt-2 gold-button py-2 rounded-lg text-sm">ভর্তির জন্য আবেদন করুন</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-gold-400/40 shadow-lg hover:shadow-xl transition group">
+                        <div class="bg-maroon-900 text-white p-6 relative">
+                            <span class="absolute top-4 right-4 bg-gold-400 text-maroon-950 font-bold text-xs px-2.5 py-1 rounded-full">UG & PG</span>
+                            <i class="fa-solid fa-university text-4xl text-gold-400 mb-2"></i>
+                            <h3 class="text-xl font-bold">বি.এ, এম.এ, বি.এসসি, বি.কম</h3>
+                            <p class="text-xs text-gold-200">Undergraduate & Post Graduation</p>
+                        </div>
+                        <div class="p-6 space-y-3 text-sm text-gray-700">
+                            <p>স্বীকৃত বিশ্ববিদ্যালয় থেকে রেগুলার ও ডিস্ট্যান্স মোডে গ্র্যাজুয়েশন এবং পোস্ট গ্র্যাজুয়েশন ডিগ্রি সম্পন্ন করার সুযোগ।</p>
+                            <div class="pt-2 flex justify-between items-center text-xs font-semibold text-maroon-900 border-t">
+                                <span><i class="fa-solid fa-clock text-gold-600"></i> UGC Approved</span>
+                                <span><i class="fa-solid fa-certificate text-gold-600"></i> University Degree</span>
+                            </div>
+                            <button onclick="navigateTo('admission')" class="w-full mt-2 gold-button py-2 rounded-lg text-sm">ভর্তির জন্য আবেদন করুন</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-gold-400/40 shadow-lg hover:shadow-xl transition group">
+                        <div class="bg-maroon-900 text-white p-6 relative">
+                            <span class="absolute top-4 right-4 bg-gold-400 text-maroon-950 font-bold text-xs px-2.5 py-1 rounded-full">Paramedical</span>
+                            <i class="fa-solid fa-user-nurse text-4xl text-gold-400 mb-2"></i>
+                            <h3 class="text-xl font-bold">ANM/GNM, B.Pharma, D.Pharma</h3>
+                            <p class="text-xs text-gold-200">Nursing & Pharmacy Admissions</p>
+                        </div>
+                        <div class="p-6 space-y-3 text-sm text-gray-700">
+                            <p>স্বাস্থ্যসেবা ক্ষেত্রে ক্যারিয়ার গড়তে নার্সিং ও ফার্মেসি কোর্সে সরাসরি অ্যাডমিশন সহায়তা ও গাইডেন্স।</p>
+                            <div class="pt-2 flex justify-between items-center text-xs font-semibold text-maroon-900 border-t">
+                                <span><i class="fa-solid fa-clock text-gold-600"></i> Govt/PCI Recognized</span>
+                                <span><i class="fa-solid fa-certificate text-gold-600"></i> Healthcare Career</span>
+                            </div>
+                            <button onclick="navigateTo('admission')" class="w-full mt-2 gold-button py-2 rounded-lg text-sm">ভর্তির জন্য আবেদন করুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-10">
+                    <button onclick="navigateTo('courses')" class="bg-maroon-900 text-white hover:bg-maroon-800 font-semibold px-8 py-3 rounded-xl border border-gold-400 shadow-md">
+                        সমস্ত কোর্স ও বিষদ বিবরণ দেখুন <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2: ABOUT US ================= -->
+        <section id="page-about" class="page-content hidden py-12 max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-maroon-800 font-bold text-sm uppercase">About Shiksha Doot Foundation</span>
+                <h2 class="text-3xl font-extrabold text-gray-900 mt-1">আমাদের পরিচিতি ও লক্ষ্য</h2>
+                <p class="text-gray-600 mt-2">শিক্ষা দূত ফাউন্ডেশন (Shiksha Doot Foundation) - শিক্ষা ও ক্যারিয়ার গড়ে তোলার অন্যতম বিশ্বস্ত পরামর্শকেন্দ্র।</p>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                    <h3 class="text-2xl font-bold text-maroon-900">আমাদের উদ্দেশ্য ও পরিষেবা</h3>
+                    <p>
+                        শিক্ষা দূত ফাউন্ডেশন পশ্চিমবঙ্গের বারাসাত থেকে পরিচালিত একটি বিশ্বস্ত শিক্ষামূলক প্ল্যাটফর্ম। আমাদের মূল লক্ষ্য হলো যে সকল শিক্ষার্থী কোনো কারণে পড়াশোনা থেকে বিচ্ছিন্ন হয়ে পড়েছেন, বা বয়স বৃদ্ধির কারণে নিয়মিত স্কুলে পড়তে পারেননি—তাদের পুনরায় শিক্ষার মূলস্রোতে ফিরিয়ে আনা।
+                    </p>
+                    <p>
+                        আমরা সিকিম বোর্ড (BOSSE) এবং রবীন্দ্র মুক্ত বিদ্যালয়ের (Rabindra Mukto Vidyalaya) মাধ্যমে মাধ্যমিক ও উচ্চমাধ্যমিক পাসের সহজ সমাধান প্রদান করি। এছাড়া স্নাতক (BA, B.Sc, B.Com), স্নাতকোত্তর (MA, M.Sc), আইন শিক্ষা (LLB, BALLB) এবং নার্সিং (ANM/GNM/B.Pharma/D.Pharma) কোর্সে নির্ভরযোগ্য গাইডেন্স প্রদান করা হয়।
+                    </p>
+                    <ul class="space-y-2 font-medium text-gray-800">
+                        <li class="flex items-center gap-2 text-maroon-900"><i class="fa-solid fa-circle-check text-gold-500"></i> ৬ থেকে ৮ মাসে সার্টিফিকেট সহায়তা</li>
+                        <li class="flex items-center gap-2 text-maroon-900"><i class="fa-solid fa-circle-check text-gold-500"></i> অনলাইন ও অফলাইন অ্যাডমিশন সাপোর্ট</li>
+                        <li class="flex items-center gap-2 text-maroon-900"><i class="fa-solid fa-circle-check text-gold-500"></i> অভিজ্ঞ শিক্ষকদের সঠিক দিকনির্দেশনা</li>
+                        <li class="flex items-center gap-2 text-maroon-900"><i class="fa-solid fa-circle-check text-gold-500"></i> সরকারি স্বীকৃত সকল সার্টিফিকেট ও মার্কশিট</li>
+                    </ul>
+                </div>
+
+                <div class="maroon-card p-8 rounded-2xl text-white border-2 border-gold-400 shadow-xl space-y-6">
+                    <h3 class="text-2xl font-bold text-gold-300 border-b border-gold-500/40 pb-3">Shiksha Doot Key Highlights</h3>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/20 flex items-center justify-center text-gold-400 font-bold text-xl border border-gold-400">
+                            01
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">সহজ ও দ্রুত রেজিস্ট্রেশন</h4>
+                            <p class="text-sm text-gray-300">ঘরে বসেই অনলাইনের মাধ্যমে আবেদন জমা এবং সম্পূর্ণ সহায়তার সুব্যবস্থা।</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/20 flex items-center justify-center text-gold-400 font-bold text-xl border border-gold-400">
+                            02
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">বৈধ বোর্ড ও বিশ্ববিদ্যালয়</h4>
+                            <p class="text-sm text-gray-300">সকল কোর্স উচ্চশিক্ষা কমিশন (UGC), সরকারি বোর্ড ও স্বীকৃত সংস্থা দ্বারা অনুমোদিত।</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/20 flex items-center justify-center text-gold-400 font-bold text-xl border border-gold-400">
+                            03
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">২৪/৭ স্টুডেন্ট হেল্পডেস্ক</h4>
+                            <p class="text-sm text-gray-300">যেকোনো তথ্য ও ভর্তির সহযোগিতায় সর্বদা আমাদের প্রতিনিধি আপনার পাশে।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3: SERVICES & COURSES ================= -->
+        <section id="page-courses" class="page-content hidden py-12 max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-maroon-800 font-bold text-sm uppercase">Comprehensive Educational Services</span>
+                <h2 class="text-3xl font-extrabold text-gray-900 mt-1">কোর্সসমূহ ও এডুকেশন ক্যাটালগ</h2>
+                <p class="text-gray-600 mt-2">আপনার পছন্দের কোর্সটি খুঁজুন এবং সরাসরি ভর্তি সহায়তার জন্য যোগাযোগ করুন</p>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Course Search & Filter Bar -->
+            <div class="bg-white p-4 rounded-xl border border-gold-400 shadow-md mb-8 flex flex-col md:flex-row gap-4 justify-between items-center">
+                <div class="relative w-full md:w-1/2">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-3.5 text-gray-400"></i>
+                    <input type="text" id="courseSearch" oninput="filterCourses()" placeholder="কোর্স বা বোর্ডের নাম খুঁজুন (যেমন: BOSSE, GNM, BA, Law)..." class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:border-gold-500 text-sm">
+                </div>
+                <div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+                    <button onclick="setCourseCategory('all')" class="category-btn bg-maroon-900 text-white text-xs px-4 py-2 rounded-lg font-semibold shadow">সব কোর্স</button>
+                    <button onclick="setCourseCategory('school')" class="category-btn bg-gray-100 text-gray-800 hover:bg-gray-200 text-xs px-4 py-2 rounded-lg font-semibold">স্কুল অ্যাডমিশন</button>
+                    <button onclick="setCourseCategory('degree')" class="category-btn bg-gray-100 text-gray-800 hover:bg-gray-200 text-xs px-4 py-2 rounded-lg font-semibold">ডিগ্রি ও আইন</button>
+                    <button onclick="setCourseCategory('medical')" class="category-btn bg-gray-100 text-gray-800 hover:bg-gray-200 text-xs px-4 py-2 rounded-lg font-semibold">নার্সিং ও ফার্মেসি</button>
+                </div>
+            </div>
+
+            <!-- Course Grid -->
+            <div id="courseGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3.5: OUR TEAM MEMBERS ================= -->
+        <section id="page-team" class="page-content hidden py-12 max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-maroon-800 font-bold text-xs uppercase tracking-widest">Our Leadership & Executive Members</span>
+                <h2 class="text-3xl font-extrabold text-gray-900 mt-1">আমাদের দক্ষ ও অভিজ্ঞ টিম</h2>
+                <p class="text-gray-600 mt-2">শিক্ষা দূত ফাউন্ডেশনের পরিচালন পরিষদ ও নিবেদিতপ্রাণ কর্মকর্তা সদস্যবৃন্দ</p>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Member 1 -->
+                <div class="bg-white rounded-2xl border-2 border-gold-400 overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                    <div class="relative bg-gradient-to-b from-maroon-950 to-maroon-900 p-6 text-center">
+                        <img src="https://placehold.co/180x180/350000/FFD700?text=Founder" alt="Founder & Director" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-gold-400 shadow-md">
+                        <span class="absolute top-3 right-3 bg-gold-400 text-maroon-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-full shadow">
+                            Founder
+                        </span>
+                    </div>
+                    <div class="p-6 text-center space-y-3">
+                        <h3 class="font-black text-xl text-maroon-900">শেখ সামিম হোসেন</h3>
+                        <p class="text-xs font-bold text-gold-600 uppercase tracking-wide bg-amber-50 py-1 px-3 rounded-full border border-gold-300 inline-block">
+                            প্রতিষ্ঠাতা ও ডিরেক্টর (Founder & Director)
+                        </p>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            শিক্ষা সম্প্রসারণ ও শিক্ষার্থীদের ক্যারিয়ার সহায়তায় অগ্রণী ভূমিকা পালন করছেন।
+                        </p>
+                        <div class="pt-3 border-t border-gray-100 flex flex-col gap-2 text-xs">
+                            <a href="tel:+919038401071" class="flex items-center justify-center gap-2 text-gray-700 hover:text-maroon-900 font-medium">
+                                <i class="fa-solid fa-phone text-gold-600"></i> +91 9038401071
+                            </a>
+                            <a href="https://wa.me/919038401071" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 rounded-lg transition shadow flex items-center justify-center gap-1.5 text-xs">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> হোয়াটসঅ্যাপ করুন
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="bg-white rounded-2xl border-2 border-gold-400 overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                    <div class="relative bg-gradient-to-b from-maroon-950 to-maroon-900 p-6 text-center">
+                        <img src="https://placehold.co/180x180/350000/FFD700?text=Advisor" alt="Academic Advisor" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-gold-400 shadow-md">
+                        <span class="absolute top-3 right-3 bg-gold-400 text-maroon-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-full shadow">
+                            Advisor
+                        </span>
+                    </div>
+                    <div class="p-6 text-center space-y-3">
+                        <h3 class="font-black text-xl text-maroon-900">প্রফেসর ড. এ. কে. রায়</h3>
+                        <p class="text-xs font-bold text-gold-600 uppercase tracking-wide bg-amber-50 py-1 px-3 rounded-full border border-gold-300 inline-block">
+                            প্রধান একাডেমিক অ্যাডভাইজার
+                        </p>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            উচ্চশিক্ষা ও ওপেন স্কুলিং কোর্সের গাইডেন্সে ২৫+ বছরের অভিজ্ঞতা সম্পন্ন।
+                        </p>
+                        <div class="pt-3 border-t border-gray-100 flex flex-col gap-2 text-xs">
+                            <a href="tel:+918777085354" class="flex items-center justify-center gap-2 text-gray-700 hover:text-maroon-900 font-medium">
+                                <i class="fa-solid fa-phone text-gold-600"></i> +91 8777085354
+                            </a>
+                            <a href="https://wa.me/918777085354" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 rounded-lg transition shadow flex items-center justify-center gap-1.5 text-xs">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> হোয়াটসঅ্যাপ করুন
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="bg-white rounded-2xl border-2 border-gold-400 overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                    <div class="relative bg-gradient-to-b from-maroon-950 to-maroon-900 p-6 text-center">
+                        <img src="https://placehold.co/180x180/350000/FFD700?text=Counselor" alt="Senior Admission Counselor" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-gold-400 shadow-md">
+                        <span class="absolute top-3 right-3 bg-gold-400 text-maroon-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-full shadow">
+                            Admission
+                        </span>
+                    </div>
+                    <div class="p-6 text-center space-y-3">
+                        <h3 class="font-black text-xl text-maroon-900">সুচরিতা মুখার্জী</h3>
+                        <p class="text-xs font-bold text-gold-600 uppercase tracking-wide bg-amber-50 py-1 px-3 rounded-full border border-gold-300 inline-block">
+                            সিনিয়র এডমিশন কন্সালটেন্ট
+                        </p>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            নার্সিং, প্যারামেডিকেল ও ডিএলএড কোর্সে ভর্তি বিষয়ক সার্বিক পরামর্শদাতা।
+                        </p>
+                        <div class="pt-3 border-t border-gray-100 flex flex-col gap-2 text-xs">
+                            <a href="tel:+919038401071" class="flex items-center justify-center gap-2 text-gray-700 hover:text-maroon-900 font-medium">
+                                <i class="fa-solid fa-phone text-gold-600"></i> +91 9038401071
+                            </a>
+                            <a href="https://wa.me/919038401071" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 rounded-lg transition shadow flex items-center justify-center gap-1.5 text-xs">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> হোয়াটসঅ্যাপ করুন
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="bg-white rounded-2xl border-2 border-gold-400 overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                    <div class="relative bg-gradient-to-b from-maroon-950 to-maroon-900 p-6 text-center">
+                        <img src="https://placehold.co/180x180/350000/FFD700?text=Coordinator" alt="Student Relation Officer" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-gold-400 shadow-md">
+                        <span class="absolute top-3 right-3 bg-gold-400 text-maroon-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-full shadow">
+                            Support
+                        </span>
+                    </div>
+                    <div class="p-6 text-center space-y-3">
+                        <h3 class="font-black text-xl text-maroon-900">রাহুল ব্যানার্জী</h3>
+                        <p class="text-xs font-bold text-gold-600 uppercase tracking-wide bg-amber-50 py-1 px-3 rounded-full border border-gold-300 inline-block">
+                            স্টুডেন্ট রিলেশন ও সাপোর্ট ইনচার্জ
+                        </p>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            শিক্ষার্থীদের তথ্য যাচাই, আইডি কার্ড ও নথিপত্র ব্যবস্থাপনায় নিয়োজিত।
+                        </p>
+                        <div class="pt-3 border-t border-gray-100 flex flex-col gap-2 text-xs">
+                            <a href="tel:+918777085354" class="flex items-center justify-center gap-2 text-gray-700 hover:text-maroon-900 font-medium">
+                                <i class="fa-solid fa-phone text-gold-600"></i> +91 8777085354
+                            </a>
+                            <a href="https://wa.me/918777085354" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 rounded-lg transition shadow flex items-center justify-center gap-1.5 text-xs">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> হোয়াটসঅ্যাপ করুন
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 4: GALLERY ================= -->
+        <section id="page-gallery" class="page-content hidden py-12 max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-maroon-800 font-bold text-sm uppercase">Official Posters & Information</span>
+                <h2 class="text-3xl font-extrabold text-gray-900 mt-1">ছবি ও পোস্টার গ্যালারি</h2>
+                <p class="text-gray-600 mt-2">শিক্ষা দূত ফাউন্ডেশনের অফিসিয়াল পোস্টার, বিজ্ঞপ্তি ও কার্যক্রম</p>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="bg-white rounded-xl border border-gold-400 overflow-hidden shadow-md group hover:shadow-xl transition cursor-pointer" onclick="openPosterModal('শিক্ষা দূত ফাউন্ডেশন - ভর্তি চলছে', 'BOSSE, Rabindra Mukto Vidyalaya, Madhyamik, Higher Secondary, Graduation and Nursing Admissions in Barasat.')">
+                    <div class="bg-maroon-900 text-white p-8 text-center relative overflow-hidden flex flex-col justify-center items-center h-56">
+                        <i class="fa-solid fa-award text-5xl text-gold-400 mb-3 group-hover:scale-110 transition"></i>
+                        <h4 class="font-bold text-lg text-gold-200">Shiksha Doot Official Poster</h4>
+                        <p class="text-xs text-gray-300 mt-1">জরুরি শিক্ষামূলক বিজ্ঞপ্তি ও ভর্তি নির্দেশিকা</p>
+                        <span class="mt-4 bg-gold-400 text-maroon-950 text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-expand mr-1"></i> বড় করে দেখুন</span>
+                    </div>
+                    <div class="p-4 bg-gray-50 border-t">
+                        <h5 class="font-bold text-gray-800 text-sm">মাধ্যমিক ও উচ্চমাধ্যমিক স্পেশাল ব্যাচ</h5>
+                        <p class="text-xs text-gray-500 mt-1">BOSSE & RMV বোর্ড এডমিশন ওপেন</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="bg-white rounded-xl border border-gold-400 overflow-hidden shadow-md group hover:shadow-xl transition cursor-pointer" onclick="openPosterModal('নার্সিং ও প্যারাডেলিক্যাল ভর্তি সংক্রান্ত', 'ANM, GNM, B.Pharma, D.Pharma & Paramedical direct consultation and admission portal.')">
+                    <div class="bg-maroon-950 text-white p-8 text-center relative overflow-hidden flex flex-col justify-center items-center h-56">
+                        <i class="fa-solid fa-user-nurse text-5xl text-gold-400 mb-3 group-hover:scale-110 transition"></i>
+                        <h4 class="font-bold text-lg text-gold-200">Nursing & Healthcare Banner</h4>
+                        <p class="text-xs text-gray-300 mt-1">ANM / GNM / Pharmacy Admissions</p>
+                        <span class="mt-4 bg-gold-400 text-maroon-950 text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-expand mr-1"></i> বড় করে দেখুন</span>
+                    </div>
+                    <div class="p-4 bg-gray-50 border-t">
+                        <h5 class="font-bold text-gray-800 text-sm">নার্সিং ও ফার্মেসি অ্যাডমিশন সহায়তা</h5>
+                        <p class="text-xs text-gray-500 mt-1">স্বাস্থ্যক্ষেত্রে উজ্জ্বল ভবিষ্যতের সুযোগ</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="bg-white rounded-xl border border-gold-400 overflow-hidden shadow-md group hover:shadow-xl transition cursor-pointer" onclick="openPosterModal('ডিগ্রি ও ল (Law) কোর্স গাইডলাইন', 'BA, MA, LLB, BALLB, B.Ed, D.El.Ed assistance for working professionals and discontinued students.')">
+                    <div class="bg-maroon-900 text-white p-8 text-center relative overflow-hidden flex flex-col justify-center items-center h-56">
+                        <i class="fa-solid fa-scale-balanced text-5xl text-gold-400 mb-3 group-hover:scale-110 transition"></i>
+                        <h4 class="font-bold text-lg text-gold-200">Law & Degree Admission</h4>
+                        <p class="text-xs text-gray-300 mt-1">BA, MA, LLB, BALLB</p>
+                        <span class="mt-4 bg-gold-400 text-maroon-950 text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-expand mr-1"></i> বড় করে দেখুন</span>
+                    </div>
+                    <div class="p-4 bg-gray-50 border-t">
+                        <h5 class="font-bold text-gray-800 text-sm">আইন ও উচ্চশিক্ষা ভর্তি সহায়তা</h5>
+                        <p class="text-xs text-gray-500 mt-1">স্বীকৃত বিশ্ববিদ্যালয় ডিগ্রি কোর্স</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 5: ADMISSION FORM ================= -->
+        <section id="page-admission" class="page-content hidden py-12 max-w-4xl mx-auto px-4">
+            <div class="bg-white rounded-2xl border-2 border-gold-400 shadow-2xl p-6 sm:p-10">
+                <div class="text-center pb-6 border-b border-gray-200 mb-8">
+                    <div class="w-16 h-16 rounded-full bg-maroon-900 text-gold-400 flex items-center justify-center mx-auto text-2xl border-2 border-gold-400 mb-3">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-maroon-900">অনলাইন অ্যাডমিশন ফর্ম</h2>
+                    <p class="text-xs sm:text-sm text-gray-600 mt-1">Shiksha Doot Foundation Online Student Application Form</p>
+                </div>
+
+                <form id="admissionForm" onsubmit="handleAdmissionSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Student Name -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">শিক্ষার্থীর নাম (Student Full Name) *</label>
+                            <input type="text" id="admName" required placeholder="পুরো নাম লিখুন" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-sm">
+                        </div>
+
+                        <!-- Guardian Name -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">অভিভাবকের নাম (Father/Mother Name) *</label>
+                            <input type="text" id="admGuardian" required placeholder="অভিভাবকের নাম" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-sm">
+                        </div>
+
+                        <!-- Date of Birth -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">জন্ম তারিখ (Date of Birth) *</label>
+                            <input type="date" id="admDob" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-sm">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">ফোন নম্বর (Phone/WhatsApp Number) *</label>
+                            <input type="tel" id="admPhone" required placeholder="১০ ডিজিটের মোবাইল নম্বর" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-sm">
+                        </div>
+
+                        <!-- Course Interested -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">আবেদনকৃত কোর্স (Desired Course) *</label>
+                            <select id="admCourse" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-sm">
+                                <option value="">কোর্স নির্বাচন করুন</option>
+                                <option value="Madhyamik (BOSSE / RMV)">মাধ্যমিক (Madhyamik - BOSSE / RMV)</option>
+                                <option value="Higher Secondary (10+2)">উচ্চমাধ্যমিক (Higher Secondary)</option>
+                                <option value="BA / B.Sc / B.Com">গ্র্যাজুয়েশন (BA / B.Sc / B.Com)</option>
+                                <option value="MA / M.Sc / M.Com">পোস্ট গ্র্যাজুয়েশন (MA / M.Sc)</option>
+                                <option value="LLB / BALLB">আইন শিক্ষা (LLB / BALLB)</option>
+                                <option value="ANM / GNM Nursing">নার্সিং (ANM / GNM Nursing)</option>
+                                <option value="B.Pharma / D.Pharma">ফার্মেসি (B.Pharma / D.Pharma)</option>
+                                <option value="B.Ed / D.El.Ed">শিক্ষক শিক্ষা (B.Ed / D.El.Ed)</option>
+                            </select>
+                        </div>
+
+                        <!-- Current Educational Qualification -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">বর্তমান শিক্ষাগত যোগ্যতা (Qualification) *</label>
+                            <input type="text" id="admQual" required placeholder="যেমন: ৮ম শ্রেণী পাস, মাধ্যমিক ইত্যাদি" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-sm">
+                        </div>
+                    </div>
+
+                    <!-- Full Address -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">সম্পূর্ণ ঠিকানা (Full Address & District) *</label>
+                        <textarea id="admAddress" rows="3" required placeholder="গ্রাম/শহর, পোস্ট, জেলা, পিন কোড লিখুন" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-sm"></textarea>
+                    </div>
+
+                    <!-- Photo Upload Preview -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">শিক্ষার্থীর ছবি সংযুক্ত করুন (Student Photo)</label>
+                        <input type="file" id="admPhoto" accept="image/*" onchange="previewUploadImage(this, 'photoPreview')" class="w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-maroon-900 file:text-gold-300 hover:file:bg-maroon-800">
+                        <img id="photoPreview" class="mt-3 w-24 h-24 object-cover rounded-lg border border-gold-400 hidden" alt="Preview">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full gold-button py-3.5 rounded-xl font-bold text-base shadow-lg">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> আবেদন জমা দিন (Submit Application)
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 6: ID CARD GENERATOR ================= -->
+        <section id="page-idcard" class="page-content hidden py-12 max-w-5xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-maroon-800 font-bold text-sm uppercase">Instant Digital ID Card</span>
+                <h2 class="text-3xl font-extrabold text-gray-900 mt-1">আইডি কার্ড জেনারেটর ও অনুমোদন স্ট্যাটাস</h2>
+                <p class="text-gray-600 mt-2">অ্যাডমিন কর্তৃক অনুমোদিত আইডি কার্ড খুঁজুন অথবা সরাসরি আইডি কার্ডের আবেদন জমা দিন</p>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Approval Status Checker Bar -->
+            <div class="bg-amber-50 border border-gold-400 p-4 rounded-xl shadow-md mb-8">
+                <h3 class="font-bold text-sm text-maroon-900 mb-2"><i class="fa-solid fa-shield-halved mr-1 text-gold-600"></i> আইডি কার্ড স্ট্যাটাস যাচাই করুন (Check Approval Status)</h3>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <input type="text" id="checkRegInput" placeholder="আপনার রেজিস্ট্রেশন নম্বর লিখুন (যেমন: SDF-2025-8841)" class="w-full px-4 py-2 text-sm rounded-lg border border-gray-300 focus:outline-none focus:border-gold-500">
+                    <button onclick="checkIDStatus()" class="gold-button px-6 py-2 rounded-lg text-sm font-bold whitespace-nowrap">
+                        <i class="fa-solid fa-magnifying-glass mr-1"></i> স্ট্যাটাস চেক করুন
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Form input to build ID card -->
+                <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-gold-400 shadow-lg space-y-4">
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <h3 class="font-bold text-lg text-maroon-900">তথ্য প্রদান করুন:</h3>
+                        <span class="text-[11px] bg-maroon-100 text-maroon-900 font-semibold px-2 py-0.5 rounded border border-maroon-300">
+                            <i class="fa-solid fa-lock text-gold-600 mr-1"></i> অ্যাডমিন অনুমোদন প্রয়োজন
+                        </span>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">নাম (Name)</label>
+                        <input type="text" id="idName" oninput="updateIDCard()" value="Sk Raihan" class="w-full px-3 py-2 rounded border border-gray-300 text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">কোর্স (Course Name)</label>
+                        <input type="text" id="idCourse" oninput="updateIDCard()" value="BOSSE Higher Secondary" class="w-full px-3 py-2 rounded border border-gray-300 text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">রেজিস্ট্রেশন নম্বর (Reg No)</label>
+                        <input type="text" id="idReg" oninput="updateIDCard()" value="SDF-2025-8841" class="w-full px-3 py-2 rounded border border-gray-300 text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">মোবাইল নম্বর (Phone)</label>
+                        <input type="text" id="idPhone" oninput="updateIDCard()" value="+91 9038401071" class="w-full px-3 py-2 rounded border border-gray-300 text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">ছবি নির্বাচন করুন (Photo)</label>
+                        <input type="file" id="idPhotoInput" accept="image/*" onchange="previewUploadImage(this, 'idCardPhoto')" class="w-full text-xs text-gray-500">
+                    </div>
+
+                    <div class="pt-2 space-y-2">
+                        <button onclick="submitIDCardForApproval()" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 rounded-xl border border-gold-400 transition shadow text-xs">
+                            <i class="fa-solid fa-paper-plane mr-1"></i> অনুমোদনের জন্য আবেদন করুন (Submit Request)
+                        </button>
+                        
+                        <button id="idPrintBtn" onclick="printIDCardWithCheck()" class="w-full bg-maroon-900 hover:bg-maroon-800 text-gold-300 font-bold py-3 rounded-xl border border-gold-400 transition shadow">
+                            <i class="fa-solid fa-print mr-2"></i> প্রিন্ট বা ডাউনলোড করুন (Print ID Card)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ID Card Live Preview Container -->
+                <div class="lg:col-span-7 flex flex-col items-center" id="printable-id-card-wrap">
+                    
+                    <!-- Approval Banner Notice -->
+                    <div id="approvalBadgeNotice" class="w-full max-w-sm mb-3 bg-emerald-100 border border-emerald-400 text-emerald-900 text-xs px-4 py-2 rounded-xl flex items-center justify-between font-bold shadow-sm">
+                        <span><i class="fa-solid fa-circle-check text-emerald-600 mr-1.5"></i> স্ট্যাটাস: অ্যাডমিন কর্তৃক অনুমোদিত (Approved)</span>
+                        <span class="bg-emerald-600 text-white text-[10px] px-2 py-0.5 rounded-full">VERIFIED</span>
+                    </div>
+
+                    <div class="w-80 bg-white rounded-2xl border-4 border-gold-500 shadow-2xl overflow-hidden relative font-sans">
+                        <!-- Top Header -->
+                        <div class="bg-gradient-to-r from-maroon-950 via-maroon-900 to-maroon-950 text-center py-4 px-3 border-b-2 border-gold-400">
+                            <h4 class="gold-text-gradient font-bold text-lg leading-tight">SHIKSHA DOOT FOUNDATION</h4>
+                            <p class="text-[10px] text-gold-300">Govt. Registered Educational Consultancy</p>
+                            <p class="text-[9px] text-gray-300">Barasat, North 24 Parganas, Kol-124</p>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-5 text-center space-y-3 bg-cream">
+                            <div class="relative w-28 h-28 mx-auto">
+                                <img id="idCardPhoto" src="https://placehold.co/120x120/800000/FFD700?text=Student+Photo" class="w-28 h-28 object-cover rounded-full border-4 border-gold-400 shadow-md mx-auto" alt="Student">
+                                <span id="cardBadgeTag" class="absolute bottom-0 right-1 bg-green-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full border border-white">APPROVED</span>
+                            </div>
+
+                            <div>
+                                <h3 id="cardDispName" class="text-xl font-extrabold text-maroon-900">Sk Raihan</h3>
+                                <p id="cardDispCourse" class="text-xs font-semibold text-gold-700">BOSSE Higher Secondary</p>
+                            </div>
+
+                            <div class="bg-white p-3 rounded-xl border border-gold-400/40 text-left text-xs space-y-1.5 shadow-sm text-gray-800">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500 font-medium">Reg No:</span>
+                                    <span id="cardDispReg" class="font-bold text-maroon-900">SDF-2025-8841</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500 font-medium">Issue Date:</span>
+                                    <span class="font-bold">2025-2026</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500 font-medium">Contact:</span>
+                                    <span id="cardDispPhone" class="font-bold">+91 9038401071</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Footer -->
+                        <div class="bg-maroon-950 text-gold-400 py-2 text-center text-[10px] font-bold border-t border-gold-400 flex justify-between px-4">
+                            <span>Authorized Signatory</span>
+                            <span>Shiksha Doot Official</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 9: ADMIN PANEL (PASSWORD PROTECTED) ================= -->
+        <section id="page-admin" class="page-content hidden py-12 max-w-7xl mx-auto px-4">
+            <!-- Admin Header -->
+            <div class="flex flex-col md:flex-row justify-between items-center bg-maroon-900 text-white p-6 rounded-2xl border-2 border-gold-400 shadow-xl mb-8 gap-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-gold-500 text-maroon-950 font-bold flex items-center justify-center text-xl shadow">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold gold-text-gradient">Shiksha Doot Admin Control Panel</h2>
+                        <p class="text-xs text-gold-200">আইডি কার্ড অনুমোদন ও আবেদন পরিচালনাবোর্ডের ড্যাশবোর্ড</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="openPasswordResetModal()" class="bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs px-4 py-2 rounded-lg border border-gold-300 shadow">
+                        <i class="fa-solid fa-key mr-1"></i> পাসওয়ার্ড পরিবর্তন (Reset Password)
+                    </button>
+                    <button onclick="adminLogout()" class="bg-red-700 hover:bg-red-800 text-white font-bold text-xs px-4 py-2 rounded-lg border border-gold-300 shadow">
+                        <i class="fa-solid fa-right-from-bracket mr-1"></i> লগআউট (Logout)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Admin Stats Counters -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white p-4 rounded-xl border border-gold-400 shadow-sm text-center">
+                    <div class="text-2xl font-extrabold text-maroon-900" id="statTotal">0</div>
+                    <div class="text-xs font-semibold text-gray-600 mt-1">মোট আবেদন (Total)</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-amber-400 shadow-sm text-center">
+                    <div class="text-2xl font-extrabold text-amber-600" id="statPending">0</div>
+                    <div class="text-xs font-semibold text-gray-600 mt-1">অনুমোদনের অপেক্ষা (Pending)</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-emerald-400 shadow-sm text-center">
+                    <div class="text-2xl font-extrabold text-emerald-600" id="statApproved">0</div>
+                    <div class="text-xs font-semibold text-gray-600 mt-1">অনুমোদিত আইডি (Approved)</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-red-400 shadow-sm text-center">
+                    <div class="text-2xl font-extrabold text-red-600" id="statRejected">0</div>
+                    <div class="text-xs font-semibold text-gray-600 mt-1">বাতিলকৃত (Rejected)</div>
+                </div>
+            </div>
+
+            <!-- Requests Table -->
+            <div class="bg-white rounded-2xl border border-gold-400 shadow-lg overflow-hidden">
+                <div class="p-4 bg-maroon-950 text-white flex justify-between items-center border-b border-gold-400">
+                    <h3 class="font-bold text-gold-300 text-sm"><i class="fa-solid fa-list-check mr-2"></i> আইডি কার্ড ও এডমিশন আবেদন তালিকা</h3>
+                    <button onclick="renderAdminRequests()" class="text-xs bg-maroon-800 hover:bg-maroon-700 text-gold-300 px-3 py-1 rounded border border-gold-500/30">
+                        <i class="fa-solid fa-rotate mr-1"></i> রিফ্রেশ
+                    </button>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-800 font-bold border-b">
+                                <th class="p-3">রেজিস্ট্রেশন নং</th>
+                                <th class="p-3">শিক্ষার্থীর নাম</th>
+                                <th class="p-3">কোর্স</th>
+                                <th class="p-3">মোবাইল</th>
+                                <th class="p-3">স্ট্যাটাস</th>
+                                <th class="p-3 text-center">অ্যাকশন (Action)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminTableBody" class="divide-y divide-gray-200">
+                            <!-- Populated dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="adminLoginModal" class="fixed inset-0 bg-black/85 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full border-2 border-gold-400 shadow-2xl overflow-hidden">
+            <div class="bg-maroon-900 text-white p-5 text-center relative border-b border-gold-400">
+                <div class="w-14 h-14 bg-maroon-950 border-2 border-gold-400 rounded-full flex items-center justify-center mx-auto mb-2 text-gold-400 text-2xl">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="font-bold text-lg gold-text-gradient">Shiksha Doot Admin Auth</h3>
+                <p class="text-xs text-gold-200 mt-0.5">প্যানেলটি নিরাপদ রাখতে পাসওয়ার্ড লিখুন</p>
+                <button onclick="closeAdminLoginModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <form onsubmit="handleAdminLogin(event)" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">অ্যাডমিন পাসওয়ার্ড (Password) *</label>
+                    <input type="password" id="adminPasswordInput" required placeholder="পাসওয়ার্ড লিখুন (Default: admin123)" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-sm">
+                </div>
+
+                <div class="flex justify-between items-center text-xs">
+                    <span class="text-gray-500">ডিফল্ট পাসওয়ার্ড: <strong class="text-maroon-900">admin123</strong></span>
+                    <button type="button" onclick="triggerPasswordResetPrompt()" class="text-maroon-900 font-bold hover:underline">পাসওয়ার্ড ভুলে গেছেন?</button>
+                </div>
+
+                <button type="submit" class="w-full gold-button py-3 rounded-xl font-bold text-sm shadow">
+                    <i class="fa-solid fa-right-to-bracket mr-1"></i> লগইন করুন (Access Panel)
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PASSWORD RESET MODAL -->
+    <div id="passwordResetModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full border-2 border-gold-400 shadow-2xl p-6 space-y-4">
+            <div class="flex justify-between items-center border-b pb-2">
+                <h3 class="font-bold text-maroon-900 text-base"><i class="fa-solid fa-key text-gold-600 mr-2"></i> অ্যাডমিন পাসওয়ার্ড পরিবর্তন</h3>
+                <button onclick="closePasswordResetModal()" class="text-gray-500 hover:text-gray-800 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <form onsubmit="handlePasswordChange(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">বর্তমান পাসওয়ার্ড (Current Password)</label>
+                    <input type="password" id="currPassInput" required class="w-full px-3 py-2 rounded border border-gray-300 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">নতুন পাসওয়ার্ড (New Password)</label>
+                    <input type="password" id="newPassInput" required class="w-full px-3 py-2 rounded border border-gray-300 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">নতুন পাসওয়ার্ড পুনরায় লিখুন (Confirm New Password)</label>
+                    <input type="password" id="confirmPassInput" required class="w-full px-3 py-2 rounded border border-gray-300 text-sm">
+                </div>
+
+                <button type="submit" class="w-full gold-button py-2.5 rounded-lg text-xs font-bold shadow">
+                    পাসওয়ার্ড আপডেট করুন
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP CHAT BUTTON -->
+    <a href="https://wa.me/919038401071?text=Hello%20Shiksha%20Doot%20Foundation,%20I%20have%20an%20enquiry" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl transition hover:scale-110 border-2 border-white" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- POSTER MODAL -->
+    <div id="posterModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden border-2 border-gold-400 shadow-2xl">
+            <div class="bg-maroon-900 text-white p-4 flex justify-between items-center">
+                <h3 id="modalTitle" class="font-bold text-gold-300 text-lg">Poster Title</h3>
+                <button onclick="closePosterModal()" class="text-white hover:text-gold-400 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 text-center space-y-4">
+                <div class="bg-maroon-950 p-8 rounded-xl border border-gold-400 text-gold-300">
+                    <i class="fa-solid fa-graduation-cap text-5xl mb-3"></i>
+                    <h4 class="font-bold text-xl text-white">Shiksha Doot Foundation</h4>
+                    <p class="text-xs text-gray-300 mt-1">Official Information Poster</p>
+                </div>
+                <p id="modalDesc" class="text-sm text-gray-700">Description goes here...</p>
+                <a href="https://wa.me/919038401071" target="_blank" class="block w-full gold-button py-3 rounded-xl font-bold text-sm">
+                    <i class="fa-brands fa-whatsapp mr-1"></i> বিস্তারিত জানতে হোয়াটসঅ্যাপ করুন
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOM MESSAGE TOAST / NOTIFICATION -->
+    <div id="toast" class="fixed top-5 right-5 bg-maroon-900 text-gold-300 border border-gold-400 px-6 py-3 rounded-xl shadow-2xl z-50 hidden transition text-sm font-semibold">
+        Notification Message
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-maroon-950 text-white border-t-2 border-gold-500 py-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <h3 class="font-bold text-lg text-gold-400 mb-3">Shiksha Doot Foundation</h3>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    শিক্ষা দূত ফাউন্ডেশন পশ্চিমবঙ্গের শিক্ষার্থীদের বিশ্বস্ত দিকনির্দেশক। মাধ্যমিক, উচ্চমাধ্যমিক, গ্র্যাজুয়েশন এবং পেশাদার নার্সিং ও ফার্মেসি কোর্সে সফলতার সঙ্গী।
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-gold-400 mb-3">দ্রুত লিঙ্কসমূহ</h4>
+                <ul class="space-y-2 text-xs text-gray-300">
+                    <li><a href="#" onclick="navigateTo('home')" class="hover:text-gold-300">হোম (Home)</a></li>
+                    <li><a href="#" onclick="navigateTo('courses')" class="hover:text-gold-300">কোর্স ক্যাটালগ (Courses)</a></li>
+                    <li><a href="#" onclick="navigateTo('team')" class="hover:text-gold-300">আমাদের টিম (Our Team)</a></li>
+                    <li><a href="#" onclick="navigateTo('admission')" class="hover:text-gold-300">অনলাইন আবেদন (Admission)</a></li>
+                    <li><a href="#" onclick="navigateTo('idcard')" class="hover:text-gold-300">স্টুডেন্ট আইডি জেনারেটর</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-gold-400 mb-3">অফিসিয়াল যোগাযোগ</h4>
+                <p class="text-xs text-gray-300 mb-1"><i class="fa-solid fa-location-dot text-gold-400 mr-2"></i> Barasat, West Bengal, Kol-124</p>
+                <p class="text-xs text-gray-300 mb-1"><i class="fa-solid fa-phone text-gold-400 mr-2"></i> +91 9038401071 / +91 8777085354</p>
+                <p class="text-xs text-gray-300"><i class="fa-solid fa-envelope text-gold-400 mr-2"></i> sssolutions198@gmail.com</p>
+            </div>
+        </div>
+        <div class="border-t border-gold-500/20 max-w-7xl mx-auto mt-8 pt-4 px-4 text-center text-xs text-gray-400">
+            © 2026 Shiksha Doot Foundation (শিক্ষা দূত ফাউন্ডেশন). All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        // Course Data Catalog
+        const coursesData = [
+            { id: 1, category: 'school', title: 'BOSSE মাধ্যমিক (10th Class)', board: 'Sikkim Board (BOSSE)', duration: '৬-৮ মাস', desc: 'যেসব শিক্ষার্থী মাধ্যমিক অকৃতকার্য বা ড্রপআউট, তাদের জন্য সহজতম উপায়ে সরকারি মাধ্যমিক সার্টিফিকেট অর্জন।' },
+            { id: 2, category: 'school', title: 'BOSSE উচ্চমাধ্যমিক (12th Science/Arts/Commerce)', board: 'Sikkim Board (BOSSE)', duration: '৬-৮ মাস', desc: 'উচ্চমাধ্যমিক দ্রুত সম্পন্ন করার সুবর্ণ সুযোগ। অল ইন্ডিয়া গভঃ স্বীকৃত বোর্ড।' },
+            { id: 3, category: 'school', title: 'রবীন্দ্র মুক্ত বিদ্যালয় মাধ্যমিক ও উচ্চমাধ্যমিক', board: 'Rabindra Mukto Vidyalaya (RMV)', duration: 'নিয়মিত ব্যাচ', desc: 'পশ্চিমবঙ্গ সরকার স্বীকৃত ওপেন বোর্ডের মাধ্যমে মাধ্যমিক ও উচ্চমাধ্যমিক পাসের সহজ গাইডেন্স।' },
+            { id: 4, category: 'degree', title: 'B.A / B.Sc / B.Com (Graduation)', board: 'UGC Approved University', duration: '৩ বছর', desc: 'গ্র্যাজুয়েশন সম্পূর্ণ করার সুযোগ দূরত্ব ও নিয়মিত মোডে।' },
+            { id: 5, category: 'degree', title: 'LL.B / B.A. LL.B (Law Degree)', board: 'Bar Council Recognized University', duration: '৩ বছর / ৫ বছর', desc: 'আইনবিদ্যায় পেশাদার ক্যারিয়ার গড়ার জন্য অ্যাডমিশন কন্সাল্টেন্সি।' },
+            { id: 6, category: 'medical', title: 'A.N.M / G.N.M Nursing', board: 'Nursing Council Approved', duration: '২-৩ বছর', desc: 'স্বীকৃত নার্সিং ইনস্টিটিউটে সরাসরি ভর্তি ও প্র্যাকটিক্যাল গাইডেন্স।' },
+            { id: 7, category: 'medical', title: 'B.Pharma / D.Pharma (Pharmacy)', board: 'PCI Approved', duration: '২-৪ বছর', desc: 'ফার্মেসি ডিগ্রি ও ডিপ্লোমা কোর্সে সরাসরি অ্যাডমিশন সহায়তা।' },
+            { id: 8, category: 'degree', title: 'B.Ed / D.El.Ed (Teacher Training)', board: 'NCTE Approved', duration: '২ বছর', desc: 'শিক্ষকতা পেশার জন্য অপরিহার্য প্রশিক্ষণের সার্বিক গাইডলাইন।' }
+        ];
+
+        let activeCategory = 'all';
+        let isAdminLoggedIn = false;
+
+        // Default Student Requests in Storage
+        const initialRequests = [
+            { id: '1', reg: 'SDF-2025-8841', name: 'Sk Raihan', course: 'BOSSE Higher Secondary', phone: '+91 9038401071', status: 'approved' },
+            { id: '2', reg: 'SDF-2025-4012', name: 'Seheli Sultana', course: 'B.A Graduation', phone: '+91 9876543210', status: 'pending' }
+        ];
+
+        // Storage Utility
+        function getStoredRequests() {
+            const data = localStorage.getItem('sdf_student_requests');
+            return data ? JSON.parse(data) : initialRequests;
+        }
+
+        function saveRequests(list) {
+            localStorage.setItem('sdf_student_requests', JSON.stringify(list));
+        }
+
+        function getAdminPassword() {
+            return localStorage.getItem('sdf_admin_password') || 'admin123';
+        }
+
+        // SPA Navigation Function
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            // Mobile Menu auto-close
+            document.getElementById('mobileMenu').classList.add('hidden');
+        }
+
+        // Admin Access Control
+        function openAdminAccess() {
+            if (isAdminLoggedIn) {
+                navigateTo('admin');
+                renderAdminRequests();
+            } else {
+                document.getElementById('adminLoginModal').classList.remove('hidden');
+            }
+        }
+
+        function closeAdminLoginModal() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const pass = document.getElementById('adminPasswordInput').value;
+            if (pass === getAdminPassword()) {
+                isAdminLoggedIn = true;
+                closeAdminLoginModal();
+                document.getElementById('adminPasswordInput').value = '';
+                showToast("অ্যাডমিন প্যানেলে স্বাগতম!");
+                navigateTo('admin');
+                renderAdminRequests();
+            } else {
+                showToast("ভুল পাসওয়ার্ড! সঠিক পাসওয়ার্ড লিখুন।");
+            }
+        }
+
+        function adminLogout() {
+            isAdminLoggedIn = false;
+            showToast("অ্যাডমিন প্যানেল থেকে লগআউট করা হয়েছে।");
+            navigateTo('home');
+        }
+
+        // Password Reset Functions
+        function openPasswordResetModal() {
+            document.getElementById('passwordResetModal').classList.remove('hidden');
+        }
+
+        function closePasswordResetModal() {
+            document.getElementById('passwordResetModal').classList.add('hidden');
+        }
+
+        function handlePasswordChange(e) {
+            e.preventDefault();
+            const curr = document.getElementById('currPassInput').value;
+            const newP = document.getElementById('newPassInput').value;
+            const confP = document.getElementById('confirmPassInput').value;
+
+            if (curr !== getAdminPassword()) {
+                showToast("বর্তমান পাসওয়ার্ড সঠিক নয়!");
+                return;
+            }
+            if (newP !== confP) {
+                showToast("নতুন পাসওয়ার্ড ম্যাচ করেনি!");
+                return;
+            }
+            if (newP.length < 4) {
+                showToast("পাসওয়ার্ড অন্তত ৪ অক্ষরের হতে হবে!");
+                return;
+            }
+
+            localStorage.setItem('sdf_admin_password', newP);
+            closePasswordResetModal();
+            showToast("পাসওয়ার্ড সফলভাবে পরিবর্তিত হয়েছে!");
+            document.getElementById('currPassInput').value = '';
+            document.getElementById('newPassInput').value = '';
+            document.getElementById('confirmPassInput').value = '';
+        }
+
+        function triggerPasswordResetPrompt() {
+            if (confirm("পাসওয়ার্ড রিসেট করে ডিফল্ট (admin123) সেট করতে চান?")) {
+                localStorage.setItem('sdf_admin_password', 'admin123');
+                showToast("পাসওয়ার্ড রিসেট করা হয়েছে: admin123");
+            }
+        }
+
+        // Render Admin Table & Stats
+        function renderAdminRequests() {
+            const list = getStoredRequests();
+            const tbody = document.getElementById('adminTableBody');
+            
+            let total = list.length;
+            let pending = 0, approved = 0, rejected = 0;
+
+            if (!tbody) return;
+
+            tbody.innerHTML = list.map(r => {
+                if (r.status === 'pending') pending++;
+                if (r.status === 'approved') approved++;
+                if (r.status === 'rejected') rejected++;
+
+                let badge = `<span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">Pending</span>`;
+                if (r.status === 'approved') badge = `<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">Approved</span>`;
+                if (r.status === 'rejected') badge = `<span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-bold">Rejected</span>`;
+
+                return `
+                    <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-maroon-900">${r.reg}</td>
+                        <td class="p-3 font-semibold">${r.name}</td>
+                        <td class="p-3 text-gray-600">${r.course}</td>
+                        <td class="p-3 text-gray-600">${r.phone}</td>
+                        <td class="p-3">${badge}</td>
+                        <td class="p-3 text-center space-x-1">
+                            <button onclick="updateRequestStatus('${r.id}', 'approved')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1 rounded text-[11px] font-bold" title="Approve">
+                                <i class="fa-solid fa-check"></i> অনুমোদন
+                            </button>
+                            <button onclick="updateRequestStatus('${r.id}', 'rejected')" class="bg-amber-600 hover:bg-amber-700 text-white px-2.5 py-1 rounded text-[11px] font-bold" title="Reject">
+                                <i class="fa-solid fa-ban"></i> বাতিল
+                            </button>
+                            <button onclick="deleteRequest('${r.id}')" class="bg-red-700 hover:bg-red-800 text-white px-2 py-1 rounded text-[11px]" title="Delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            document.getElementById('statTotal').innerText = total;
+            document.getElementById('statPending').innerText = pending;
+            document.getElementById('statApproved').innerText = approved;
+            document.getElementById('statRejected').innerText = rejected;
+        }
+
+        function updateRequestStatus(id, status) {
+            let list = getStoredRequests();
+            list = list.map(item => item.id === id ? { ...item, status } : item);
+            saveRequests(list);
+            renderAdminRequests();
+            showToast("আবেদনের স্ট্যাটাস আপডেট করা হয়েছে!");
+        }
+
+        function deleteRequest(id) {
+            if (confirm("আপনি কি নিশ্চিত যে এই রেকর্ডটি ডিলিট করতে চান?")) {
+                let list = getStoredRequests();
+                list = list.filter(item => item.id !== id);
+                saveRequests(list);
+                renderAdminRequests();
+                showToast("রেকর্ড ডিলিট করা হয়েছে।");
+            }
+        }
+
+        // Student ID Card Approval Checking
+        function checkIDStatus() {
+            const regInput = document.getElementById('checkRegInput').value.trim();
+            if (!regInput) {
+                showToast("অনুগ্রহ করে একটি রেজিস্ট্রেশন নম্বর লিখুন!");
+                return;
+            }
+
+            const list = getStoredRequests();
+            const found = list.find(r => r.reg.toLowerCase() === regInput.toLowerCase());
+
+            if (found) {
+                document.getElementById('idName').value = found.name;
+                document.getElementById('idCourse').value = found.course;
+                document.getElementById('idReg').value = found.reg;
+                document.getElementById('idPhone').value = found.phone;
+                updateIDCard();
+
+                if (found.status === 'approved') {
+                    setIDCardVisualStatus(true, "অ্যাডমিন কর্তৃক অনুমোদিত (Approved)");
+                    showToast("আইডি কার্ডটি অনুমোদিত! এখন প্রিন্ট করতে পারেন।");
+                } else if (found.status === 'pending') {
+                    setIDCardVisualStatus(false, "আপনার আইডি কার্ডটি অ্যাডমিন পর্যালোচনার অধীনে রয়েছে।");
+                    showToast("স্ট্যাটাস: পেন্ডিং! অ্যাডমিন অনুমোদনের অপেক্ষা করুন।");
+                } else {
+                    setIDCardVisualStatus(false, "আপনার আবেদনটি বাতিল (Rejected) করা হয়েছে।");
+                    showToast("স্ট্যাটাস: আবেদন বাতিল করা হয়েছে।");
+                }
+            } else {
+                showToast("কোনো ম্যাচিং রেকর্ড পাওয়া যায়নি!");
+            }
+        }
+
+        function setIDCardVisualStatus(isApproved, textMsg) {
+            const badgeNotice = document.getElementById('approvalBadgeNotice');
+            const cardTag = document.getElementById('cardBadgeTag');
+
+            if (isApproved) {
+                badgeNotice.className = "w-full max-w-sm mb-3 bg-emerald-100 border border-emerald-400 text-emerald-900 text-xs px-4 py-2 rounded-xl flex items-center justify-between font-bold shadow-sm";
+                badgeNotice.innerHTML = `<span><i class="fa-solid fa-circle-check text-emerald-600 mr-1.5"></i> ${textMsg}</span> <span class="bg-emerald-600 text-white text-[10px] px-2 py-0.5 rounded-full">APPROVED</span>`;
+                
+                cardTag.className = "absolute bottom-0 right-1 bg-green-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full border border-white";
+                cardTag.innerText = "APPROVED";
+            } else {
+                badgeNotice.className = "w-full max-w-sm mb-3 bg-amber-100 border border-amber-400 text-amber-900 text-xs px-4 py-2 rounded-xl flex items-center justify-between font-bold shadow-sm";
+                badgeNotice.innerHTML = `<span><i class="fa-solid fa-clock text-amber-600 mr-1.5"></i> ${textMsg}</span> <span class="bg-amber-600 text-white text-[10px] px-2 py-0.5 rounded-full">PENDING</span>`;
+                
+                cardTag.className = "absolute bottom-0 right-1 bg-amber-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full border border-white";
+                cardTag.innerText = "PENDING";
+            }
+        }
+
+        function submitIDCardForApproval() {
+            const name = document.getElementById('idName').value.trim();
+            const course = document.getElementById('idCourse').value.trim();
+            const reg = document.getElementById('idReg').value.trim();
+            const phone = document.getElementById('idPhone').value.trim();
+
+            if (!name || !reg) {
+                showToast("নাম ও রেজিস্ট্রেশন নম্বর আবশ্যক!");
+                return;
+            }
+
+            let list = getStoredRequests();
+            const existing = list.find(r => r.reg === reg);
+
+            if (existing) {
+                showToast("এই রেজিস্ট্রেশন নম্বরে ইতিমধ্যেই একটি আবেদন জমা রয়েছে।");
+                return;
+            }
+
+            const newReq = {
+                id: Date.now().toString(),
+                reg,
+                name,
+                course,
+                phone,
+                status: 'pending'
+            };
+
+            list.push(newReq);
+            saveRequests(list);
+            setIDCardVisualStatus(false, "আপনার আইডি কার্ডের অনুমোদন আবেদন জমা নেওয়া হয়েছে।");
+            showToast("অনুমোদন আবেদন জমা দেওয়া হয়েছে! অ্যাডমিন পর্যালোচনার পর প্রিন্ট করতে পারবেন।");
+        }
+
+        function printIDCardWithCheck() {
+            const reg = document.getElementById('idReg').value;
+            const list = getStoredRequests();
+            const found = list.find(r => r.reg.toLowerCase() === reg.toLowerCase());
+
+            if (!found || found.status !== 'approved') {
+                showToast("আইডি কার্ডটি এখনও অ্যাডমিন দ্বারা অনুমোদিত নয়। অনুমোদনের পর প্রিন্ট করুন!");
+                return;
+            }
+
+            window.print();
+        }
+
+        // Render Courses
+        function renderCourses(list) {
+            const grid = document.getElementById('courseGrid');
+            if (!grid) return;
+            grid.innerHTML = list.map(c => `
+                <div class="bg-white rounded-2xl border border-gold-400/50 p-6 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-maroon-900 text-gold-300 text-[11px] font-bold px-2.5 py-1 rounded-full">${c.board}</span>
+                            <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-clock text-gold-600 mr-1"></i>${c.duration}</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-maroon-900 mb-2">${c.title}</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed mb-4">${c.desc}</p>
+                    </div>
+                    <button onclick="navigateTo('admission')" class="w-full gold-button py-2 rounded-lg text-xs font-bold">
+                        <i class="fa-solid fa-file-pen mr-1"></i> সরাসরি আবেদন করুন
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Filter Courses
+        function filterCourses() {
+            const query = document.getElementById('courseSearch').value.toLowerCase();
+            const filtered = coursesData.filter(c => {
+                const matchesCat = activeCategory === 'all' || c.category === activeCategory;
+                const matchesSearch = c.title.toLowerCase().includes(query) || c.board.toLowerCase().includes(query);
+                return matchesCat && matchesSearch;
+            });
+            renderCourses(filtered);
+        }
+
+        function setCourseCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-maroon-900', 'text-white');
+                btn.classList.add('bg-gray-100', 'text-gray-800');
+            });
+            event.target.classList.remove('bg-gray-100', 'text-gray-800');
+            event.target.classList.add('bg-maroon-900', 'text-white');
+            filterCourses();
+        }
+
+        // Poster Modal
+        function openPosterModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('posterModal').classList.remove('hidden');
+        }
+
+        function closePosterModal() {
+            document.getElementById('posterModal').classList.add('hidden');
+        }
+
+        // Live ID Card Updates
+        function updateIDCard() {
+            document.getElementById('cardDispName').innerText = document.getElementById('idName').value || 'Student Name';
+            document.getElementById('cardDispCourse').innerText = document.getElementById('idCourse').value || 'Course Name';
+            document.getElementById('cardDispReg').innerText = document.getElementById('idReg').value || 'Registration';
+            document.getElementById('cardDispPhone').innerText = document.getElementById('idPhone').value || 'Phone';
+        }
+
+        // Image Preview Handler
+        function previewUploadImage(input, targetId) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.getElementById(targetId);
+                    img.src = e.target.result;
+                    img.classList.remove('hidden');
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // Soulmate Matrimony Filters
+        function filterSoulmate(type) {
+            const cards = document.querySelectorAll('.soulmate-card');
+            cards.forEach(card => {
+                if (type === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.contains(type) ? card.classList.remove('hidden') : card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Matrimony Inquiry Modal
+        function openInquiryModal(profileInfo) {
+            document.getElementById('inquiryProfileText').innerText = "Selected Profile: " + profileInfo;
+            document.getElementById('inquiryModal').classList.remove('hidden');
+        }
+
+        function closeInquiryModal() {
+            document.getElementById('inquiryModal').classList.add('hidden');
+        }
+
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            closeInquiryModal();
+            showToast("আপনার বায়োডাটা অনুসন্ধানের অনুরোধ সফলভাবে জমা হয়েছে!");
+        }
+
+        // Form Handlers
+        function handleAdmissionSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('admName').value;
+            const course = document.getElementById('admCourse').value;
+            const phone = document.getElementById('admPhone').value;
+            const reg = "SDF-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000);
+
+            // Automatically add to admin pending requests
+            let list = getStoredRequests();
+            list.push({
+                id: Date.now().toString(),
+                reg,
+                name,
+                course,
+                phone,
+                status: 'pending'
+            });
+            saveRequests(list);
+
+            showToast(`ধন্যবাদ ${name}! ${course} কোর্সের জন্য আপনার আবেদন জমা নেওয়া হয়েছে (Reg: ${reg})।`);
+            e.target.reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast("আপনার বার্তাটি সফলভাবে পাঠানো হয়েছে!");
+            e.target.reset();
+        }
+
+        // Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 4000);
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Initialize Web App
+        window.onload = function() {
+            renderCourses(coursesData);
+            if (!localStorage.getItem('sdf_student_requests')) {
+                saveRequests(initialRequests);
+            }
+        };
+    </script>
+</body>
+</html>
